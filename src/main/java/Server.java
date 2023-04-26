@@ -2,7 +2,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Server {
-    private Map<int, Participant> participants = new HashMap<int, Participant>();
+    private Map<Integer, Participant> participants = new HashMap<Integer, Participant>();
+
+    public void addParticipant(Participant participant) {
+        participants.put(participant.getId(), participant);
+    }
 
     public String sendMessage(Message message) throws NullPointerException {
         Participant recipient = participants.get(message.getTo());
